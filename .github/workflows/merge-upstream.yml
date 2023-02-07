@@ -9,6 +9,9 @@
 name: Merge-upstream
 
 on:
+  push:
+    branches: 
+      - master
   schedule:
     - cron: 30 19 * * *
 
@@ -19,12 +22,15 @@ jobs:
 
   merge:
 
+    permissions:
+      contents: write
+
     runs-on: ubuntu-latest
 
     steps:
 
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v2
       with:
         ref: master
         fetch-depth: 0
