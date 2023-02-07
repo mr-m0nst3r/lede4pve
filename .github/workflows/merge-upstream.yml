@@ -19,6 +19,9 @@ jobs:
 
   merge:
 
+    permissions:
+      contents: write
+
     runs-on: ubuntu-latest
 
     steps:
