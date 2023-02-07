@@ -18,9 +18,6 @@ jobs:
 
   build_openwrt:
 
-    permissions:
-      contents: write
-
     name: Build OpenWrt Firmware
 
     runs-on: ubuntu-latest
