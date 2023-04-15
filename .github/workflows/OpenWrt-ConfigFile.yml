@@ -39,6 +39,7 @@ jobs:
         run: |
           docker rmi `docker images -q`
           sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d /usr/local/lib/android
+          sudo -E apt-mark hold grub-efi-amd64-signed
           sudo -E apt update
           sudo -E apt -y purge azure-cli* docker* ghc* zulu* llvm* firefox google* dotnet* powershell* openjdk* mysql* php* mongodb* dotnet* moby* snap*
           sudo -E apt -y full-upgrade
@@ -52,9 +53,9 @@ jobs:
         uses: actions/checkout@v3
       - name: Update feeds
         run: |
-          #sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+          sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           sed -i '$a \src-git OpenClash https://github.com/vernesong/OpenClash' ./feeds.conf.default
-          git clone https://github.com/kongfl888/luci-app-adguardhome ./package/luci-app-adguardhome
+          #git clone https://github.com/kongfl888/luci-app-adguardhome ./package/luci-app-adguardhome
           ./scripts/feeds update -a
           ./scripts/feeds install -a
       - name: Generate configuration file
@@ -80,7 +81,7 @@ jobs:
           make defconfig
           
       - name: Deliver configtest
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: OpenWrt_config
           path: ./.config
