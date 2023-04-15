@@ -66,14 +66,14 @@ jobs:
           cat >> .config <<EOF
           # CONFIG_PACKAGE_luci-app-accesscontrol is not set
           # CONFIG_PACKAGE_luci-app-adbyby-plus is not set
-		      # CONFIG_PACKAGE_luci-app-arpbind is not set
-		      # CONFIG_PACKAGE_luci-app-autoreboot is not set
-		      # CONFIG_PACKAGE_luci-app-ddns is not set
-		      # CONFIG_PACKAGE_luci-app-filetransfer is not set
+          # CONFIG_PACKAGE_luci-app-arpbind is not set
+	  # CONFIG_PACKAGE_luci-app-autoreboot is not set
+	  # CONFIG_PACKAGE_luci-app-ddns is not set
+	  # CONFIG_PACKAGE_luci-app-filetransfer is not set
           # CONFIG_PACKAGE_luci-app-ipsec-vpnd is not set
-		      # CONFIG_PACKAGE_luci-app-vlmcsd is not set
-		      # CONFIG_PACKAGE_luci-app-unblockmusic is not set
-		      # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go is not set
+	  # CONFIG_PACKAGE_luci-app-vlmcsd is not set
+	  # CONFIG_PACKAGE_luci-app-unblockmusic is not set
+	  # CONFIG_PACKAGE_luci-app-unblockmusic_INCLUDE_UnblockNeteaseMusic_Go is not set
           # CONFIG_PACKAGE_luci-app-qbittorrent_static is not set
           # CONFIG_PACKAGE_luci-app-qbittorrent-simple_dynamic is not set
           # CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui is not set
@@ -81,7 +81,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-samba4 is not set
           # CONFIG_PACKAGE_luci-app-ttyd is not set
           # CONFIG_PACKAGE_luci-app-vsftpd is not set
-		      # CONFIG_PACKAGE_luci-app-wol is not set
+	  # CONFIG_PACKAGE_luci-app-wol is not set
           # CONFIG_PACKAGE_luci-app-xlnetacc is not set
           # CONFIG_PACKAGE_luci-app-zerotier is not set
           
