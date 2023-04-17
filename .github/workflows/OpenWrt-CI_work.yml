@@ -48,7 +48,7 @@ jobs:
 
       - name: Update feeds
         run: |
-          #sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
+          sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           sed -i '$a \src-git OpenClash https://github.com/vernesong/OpenClash' ./feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
@@ -85,6 +85,13 @@ jobs:
           # CONFIG_PACKAGE_luci-app-xlnetacc is not set
           # CONFIG_PACKAGE_luci-app-zerotier is not set
           
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Client is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Libev_Server is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ChinaDNS_NG is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks_Simple_Obfs is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Client is not set
+          # CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Libev_Server is not set
+          CONFIG_PACKAGE_luci-app-frpc=y
           CONFIG_PACKAGE_luci-app-webadmin=y                  
           CONFIG_PACKAGE_luci-app-openclash=y
                     
