@@ -99,7 +99,8 @@ jobs:
           # Extra packages
           #
           # CONFIG_PACKAGE_autosamba is not set
-          
+          CONFIG_PACKAGE_tailscale=y
+          CONFIG_PACKAGE_tailscaled=y
           #
           # Configuration
           #
