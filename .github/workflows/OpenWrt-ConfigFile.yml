@@ -70,6 +70,8 @@ jobs:
           
           cat >> .config <<EOF
           ##
+          CONFIG_PACKAGE_tailscale=y
+          CONFIG_PACKAGE_tailscaled=y
           
           ##
           EOF
