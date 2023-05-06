@@ -67,7 +67,6 @@ jobs:
           # ? cat >> .config <<EOF ? EOF ??????????, ???????
           # ??:
           
-          CONFIG_PACKAGE_luci-app-docker=y
           
           cat >> .config <<EOF
           ##
