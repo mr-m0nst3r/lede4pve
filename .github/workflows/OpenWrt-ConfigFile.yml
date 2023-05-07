@@ -62,23 +62,14 @@ jobs:
         run: |
           rm -f ./.config*
           touch ./.config
-          
-          #
-          # ? cat >> .config <<EOF ? EOF ??????????, ???????
-          # ??:
-          
+        
           
           cat >> .config <<EOF
           ##
-          CONFIG_PACKAGE_tailscale=y
-          CONFIG_PACKAGE_tailscaled=y
           
           ##
           EOF
           
-          #
-          # ===============================================================
-          # 
           
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
