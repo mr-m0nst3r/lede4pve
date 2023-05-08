@@ -8,6 +8,13 @@
 name: OpenWrt-CI
 
 on:
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'tags'
+        required: false 
+        type: boolean
+
   schedule:
     - cron: 0 20 * * *
 
