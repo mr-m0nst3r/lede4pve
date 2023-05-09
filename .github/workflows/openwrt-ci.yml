@@ -48,7 +48,6 @@ jobs:
 
       - name: Update feeds
         run: |
-          # sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
           sed -i '$a \src-git OpenClash https://github.com/vernesong/OpenClash' ./feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
@@ -62,16 +61,58 @@ jobs:
           # ========================固件定制部分========================
           #
           # 示例配置，下面是 diff.config 文件中的内容
+
+          # 不生成EFI，加入FDISK/PARTED/RESIZE2FS,不使用HELLOWORLD
           CONFIG_TARGET_x86=y
           CONFIG_TARGET_x86_64=y
           CONFIG_TARGET_x86_64_DEVICE_generic=y
-          CONFIG_QCOW2_IMAGES=y
+          CONFIG_ARIA2_BITTORRENT=y
+          CONFIG_ARIA2_NOXML=y
+          CONFIG_ARIA2_OPENSSL=y
+          CONFIG_ARIA2_WEBSOCKET=y
+          # CONFIG_GRUB_EFI_IMAGES is not set
+          CONFIG_GRUB_IMAGES=y
+          CONFIG_ISO_IMAGES=y
+          CONFIG_PACKAGE_aria2=y
+          CONFIG_PACKAGE_ariang=y
+          CONFIG_PACKAGE_bash=y
+          CONFIG_PACKAGE_coreutils=y
+          CONFIG_PACKAGE_coreutils-nohup=y
+          CONFIG_PACKAGE_fdisk=y
+          # CONFIG_PACKAGE_grub2-bios-setup is not set
+          # CONFIG_PACKAGE_grub2-efi is not set
+          CONFIG_PACKAGE_kmod-inet-diag=y
+          CONFIG_PACKAGE_libcap-bin=y
+          CONFIG_PACKAGE_libcap-bin-capsh-shell="/bin/sh"
+          # CONFIG_PACKAGE_libminiupnpc is not set
+          # CONFIG_PACKAGE_libnatpmp is not set
+          CONFIG_PACKAGE_libruby=y
+          CONFIG_PACKAGE_libyaml=y
+          CONFIG_PACKAGE_luci-app-openclash=y
+          # CONFIG_PACKAGE_luci-app-zerotier is not set
+          CONFIG_PACKAGE_luci-theme-design=m
+          CONFIG_PACKAGE_luci-theme-material=m
+          CONFIG_PACKAGE_resize2fs=y
+          CONFIG_PACKAGE_ruby=y
+          CONFIG_PACKAGE_ruby-bigdecimal=y
+          CONFIG_PACKAGE_ruby-date=y
+          CONFIG_PACKAGE_ruby-digest=y
+          CONFIG_PACKAGE_ruby-enc=y
+          CONFIG_PACKAGE_ruby-forwardable=y
+          CONFIG_PACKAGE_ruby-pstore=y
+          CONFIG_PACKAGE_ruby-psych=y
+          CONFIG_PACKAGE_ruby-stringio=y
+          CONFIG_PACKAGE_ruby-strscan=y
+          CONFIG_PACKAGE_ruby-yaml=y
+          CONFIG_PACKAGE_unzip=y
+          # CONFIG_PACKAGE_zerotier is not set
           CONFIG_TARGET_EXT4_BLOCKSIZE=4096
           CONFIG_TARGET_EXT4_BLOCKSIZE_4K=y
           CONFIG_TARGET_EXT4_RESERVED_PCT=0
           CONFIG_TARGET_KERNEL_PARTSIZE=160
           CONFIG_TARGET_ROOTFS_EXT4FS=y
-          CONFIG_TARGET_ROOTFS_PARTSIZE=4000
+          CONFIG_TARGET_ROOTFS_PARTSIZE=4096
+          # CONFIG_TARGET_ROOTFS_SQUASHFS is not set
           # CONFIG_VMDK_IMAGES is not set
           #
           # ========================固件定制部分结束========================
