@@ -43,8 +43,16 @@ jobs:
           sudo -E apt clean
           sudo -E timedatectl set-timezone "Asia/Shanghai"
 
-      - name: Checkout OpenWrt
-        uses: actions/checkout@v3
+      # - name: Checkout OpenWrt
+      #   uses: actions/checkout@v3
+
+      - name: Checkout coolsnowwolf at tag 20220401
+        # You may pin to the exact commit or the version.
+        # uses: AlexAtkinson/github-action-checkout-from-tag@0b3bee85751af56dd00a3cae02684aa69a94b8e3
+        uses: AlexAtkinson/github-action-checkout-from-tag@0.2.1
+        with:
+          repo: https://github.com/coolsnowwolf/lede.git
+          tag: 20220401
 
       - name: Update feeds
         run: |
